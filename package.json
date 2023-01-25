@@ -1,38 +1,77 @@
 {
-  "name": "meta-tx",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "meta-tx",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@celo/rainbowkit-celo": "^0.8.0",
+        "@chakra-ui/react": "^2.4.9",
+        "@emotion/react": "^11.10.5",
+        "@emotion/styled": "^11.10.5",
+        "@metamask/eth-sig-util": "^5.0.2",
+        "@openzeppelin/contracts": "^4.8.1",
+        "@rainbow-me/rainbowkit": "^0.8.1",
+        "@rollup/plugin-commonjs": "^24.0.1",
+        "@rollup/plugin-json": "^6.0.0",
+        "@rollup/plugin-node-resolve": "^15.0.1",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^13.5.0",
+        "builtin-modules": "^3.3.0",
+        "defender-autotask-client": "^1.38.0",
+        "defender-relay-client": "^1.38.0",
+        "dotenv": "^16.0.3",
+        "framer-motion": "^8.5.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-scripts": "5.0.1",
+        "rollup": "^3.10.1",
+        "wagmi": "^0.10.15",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "build:relay": "rollup -c",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "upload": "npm run build:relay && node ./scripts/upload.js",
+        "sign": "hardhat run scripts/sign.js --network alfajores",
+        "relay": "node scripts/relay.js"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@ethersproject/abi": "^5.7.0",
+        "@ethersproject/providers": "^5.7.2",
+        "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
+        "@nomicfoundation/hardhat-network-helpers": "^1.0.7",
+        "@nomicfoundation/hardhat-toolbox": "^2.0.1",
+        "@nomiclabs/hardhat-ethers": "^2.2.2",
+        "@nomiclabs/hardhat-etherscan": "^3.1.5",
+        "@typechain/ethers-v5": "^10.2.0",
+        "@typechain/hardhat": "^6.1.5",
+        "chai": "^4.3.7",
+        "eth-sig-util": "^3.0.1",
+        "ethers": "^5.7.2",
+        "hardhat": "^2.12.6",
+        "hardhat-gas-reporter": "^1.0.9",
+        "solidity-coverage": "^0.8.2",
+        "typechain": "^8.1.1"
+    }
 }
